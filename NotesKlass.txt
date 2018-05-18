@@ -1,0 +1,13 @@
+Prak Notes:
+-Onderskei tussen hardcode & stelselcode
+  -- Program moet dinamies wees, template wat data struktuur gebruik.
+  -- Moenie static goed gebruik nie, subjects created by instructor.
+-Asseseering sit vraag by, multikuese vraag, bou so tool wat data kan inlees.
+-Toets moet aanlyn gedoen word, punte in n tabel wees, enrolement.
+-Merk van toetse, instructor can net n merk opsies die toetse merk en die punte weer bere.
+-Additionele funksionaliteit, moduleriteit sodat mens maklik aan die ruggraat kan las.
+  -- Moenie binne die mod peter nie. So basies mnr will n tipe van plug en play stelsel he.
+
+Tweede week na die vakansie se maandag demo ons die databasis prak.16 April moet ons demo die tabelle.
+
+Toetsweek iewers sal ons die vak se toets skryf....
