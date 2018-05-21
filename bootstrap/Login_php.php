@@ -15,6 +15,7 @@ if (isset($_POST['submit'])){
 	if ($conn->query($sql1) === TRUE) {
     echo "Database selected succesfully";
 	echo "<br>";
+	mysqli_free_result($sql1);
        } 
 else {
     echo "Error: " . $sql1 . "<br>" . $conn->error;
@@ -27,9 +28,13 @@ else {
 	
 	
 	
-	
+	if(mysql_num_rows($reslultcheck) === 0){
+		echo "cresidentials not found";
 		
+			
+	} else {
 		
+			mysqli_free_result($reslultcheck); //decition made the resultset can be cleared
 				//Apply login action
 			$sql_login = "INSERT INTO login (User_ID,User_password) VALUES ('$quser_id','$quser_password');";
 
@@ -43,7 +48,10 @@ else {
 			echo "<br>";
 				}
 			//header("location:complete.html");//redirect back to main page
+			mysqli_free_result($sql_login);
 		
+		
+	}
 		
 		
 
