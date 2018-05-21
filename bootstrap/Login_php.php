@@ -26,16 +26,12 @@ else {
 
 	
 	
-	if (mysqli_num_rows($reslultcheck) != 0)
-	{
-		 echo "User name and or password is not matching";
-		header("location:index.html");//redirect back to main page
-	} 
-	else {
+	
+	
 		
 		
 				//Apply login action
-			$sql_login = "INSERT INTO userprofile (User_ID,User_password) VALUES ('$quser_id','$quser_password');";
+			$sql_login = "INSERT INTO login (User_ID,User_password) VALUES ('$quser_id','$quser_password');";
 
 			if ($conn->query($sql_login) === TRUE) 
 				{
@@ -50,7 +46,7 @@ else {
 		
 		
 		
-}
+
 	
 
 
