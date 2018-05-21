@@ -1,5 +1,5 @@
 <?php
-echo "xx";
+
 if (isset($_POST['submit'])){
 
 	include_once 'connect_DB.php';
@@ -15,29 +15,42 @@ if (isset($_POST['submit'])){
 	if ($conn->query($sql1) === TRUE) {
     echo "Database selected succesfully";
 	echo "<br>";
-	mysqli_free_result($sql1);
+	
+	//mysqli_free_result($sql1);
        } 
 else {
     echo "Error: " . $sql1 . "<br>" . $conn->error;
 	echo "<br>";
 }
+
+// check query to see if password and username exists
 	$sql_check_exists = "SELECT User_ID ,User_password from userprofile where userprofile.User_ID = '$quser_id' AND userprofile.User_password = '$quser_password';";
 	
 	$reslultcheck = mysql_query($conn,$sql_check_exists);
-
 	
-	
-	
-	if(mysql_num_rows($reslultcheck) === 0){
+	if(isset($reslultcheck) && $reslultcheck!=null)
+				{
+	$checkpass = mysql_num_rows($reslultcheck);
+				}
+				else {
+					$checkpass = 0;
+					}
+	if($checkpass === 0){
 		echo "cresidentials not found";
 		
 			
 	} else {
 		
-			mysqli_free_result($reslultcheck); //decition made the resultset can be cleared
+			
+			// 4. Release returned data 
+			//mysqli_free_result($reslultcheck); //decition made the resultset can be cleared
+				
+			 
 				//Apply login action
+				
 			$sql_login = "INSERT INTO login (User_ID,User_password) VALUES ('$quser_id','$quser_password');";
 
+			
 			if ($conn->query($sql_login) === TRUE) 
 				{
 			echo "LOGIN WAS SUCCESFULL YAAAAA";
@@ -48,8 +61,10 @@ else {
 			echo "<br>";
 				}
 			//header("location:complete.html");//redirect back to main page
-			mysqli_free_result($sql_login);
-		
+			if(isset($sql_login) && $sql_login!=null)
+				{
+			//mysqli_free_result($sql_login);
+				}
 		
 	}
 		
