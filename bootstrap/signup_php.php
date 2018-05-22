@@ -41,11 +41,12 @@ if ($result=mysqli_query($conn,"select max(User_ID)  from userprofile;"))
 
 
 
-	
+	//hasing the password
+	$hased_pass_word = password_hash($quser_password,PASSWORD_DEFAULT);
 	
 	//$sql2 = "DELETE from userprofile;";
 	//Insert form data query
-	$sql2 = "INSERT INTO userprofile (User_ID,User_Type,User_FName,User_LName,User_Age,User_sex,User_Telephone,User_StreetAddress,User_password) VALUES ('$quser_id','$quser_type','$quser_fname','$quser_lname','$quser_age','$quser_sex','$quser_telephone','$quser_streetadress','$quser_password');";
+	$sql2 = "INSERT INTO userprofile (User_ID,User_Type,User_FName,User_LName,User_Age,User_sex,User_Telephone,User_StreetAddress,User_password) VALUES ('$quser_id','$quser_type','$quser_fname','$quser_lname','$quser_age','$quser_sex','$quser_telephone','$quser_streetadress','$hased_pass_word');";
 	
 	
 	if ($conn->query($sql2) === TRUE) {
