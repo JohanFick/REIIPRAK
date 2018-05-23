@@ -14,24 +14,43 @@ if(isset($_POST['submit'])){
 		exit();
 		
 	}else{
+		//select database query
+		$sql1 = "use reii414_practical_db;";
+	
+		if ($conn->query($sql1) === TRUE) {
+		echo "Database selected succesfully";
+		echo "<br>";
+		} 	else{
+					echo "Error: " . $sql1 . "<br>" . $conn->error;
+					echo "<br>";
+				}
+		
 		$sql = "SELECT * FROM userprofile WHERE User_ID = '$quser_id';";
-		$result = mysqli_query($conn,$sql);
-		$rr = mysqli_num_rows($result);
+		//$result = mysqli_query($conn,$sql);
+		//$rr = mysqli_num_rows($result);
+		$result = $conn->query($sql) or trigger_error($conn->error." [$sql]"); /* I have added the suggestion from Your Common Sence */
+		echo $result->num_rows;
+
 		
+
+			
 		
-		if (2 < 1 ){ 
+		if ($result->num_rows < 1 ){ 
 			//header("Location:error.php?login=error");
-			echo "user name or password incorrect poes burger";
+			echo "Username does not exist";
 			exit();
 			
 		} else{
-			echo "first if";
-			if ($row = mysqli_fetch_assoc($result)){
+			$row = $result->fetch_assoc();
+			echo $row['User_password'];
+			echo $row['User_ID'];
+			if (true){
 				//udo hash
 				echo "first if";
 				$hasedpwdchecker = password_verify($quser_password,$row['User_password']);
 				if($hasedpwdchecker == false){
-					header("Location:error.html?login=error");
+					//header("Location:error.html?login=error");
+					
 					exit();
 					
 				} elseif($hasedpwdchecker == true){
@@ -39,22 +58,16 @@ if(isset($_POST['submit'])){
 					//create session variable
 					echo "go burger";
 					$_SESSION['user_id'] = $row['User_ID'];
-					
+					$hased_pass = password_hash($quser_password,PASSWORD_DEFAULT);
 					$sql_login = "INSERT INTO login (User_ID,User_password) VALUES ('$quser_id','$hased_pass');";
 					echo "yes yes yes";
-					if ($conn->query($sql_login) === TRUE) 
-						{
-							echo "LOGIN WAS SUCCESFULL";
-							echo "<br>";
-						} 
-			             else {
-								echo "Error: " . $sql_login . "<br>" . $conn->error;
-								echo "<br>";
-							}
-				
-					
+					$queryresult = $conn->query($sql_login) or trigger_error($conn->error." [$sql_login]");
+					//becarefull of a closed connection (cause of could not fetch mysqli in line....);
+					$conn->close();
 				}
+				echo "cxcx";
 			}
+			
 			
 			
 			
