@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if(isset($_POST['submit'])){
 	include_once 'connect_DB.php';
 	$quser_id = mysqli_real_escape_string($conn,$_POST['User_ID']);
@@ -14,16 +16,7 @@ if(isset($_POST['submit'])){
 		exit();
 		
 	}else{
-		//select database query
-		$sql1 = "use reii414_practical_db;";
-	
-		if ($conn->query($sql1) === TRUE) {
-		echo "Database selected succesfully";
-		echo "<br>";
-		} 	else{
-					echo "Error: " . $sql1 . "<br>" . $conn->error;
-					echo "<br>";
-				}
+		
 		
 		$sql = "SELECT * FROM userprofile WHERE User_ID = '$quser_id';";
 		//$result = mysqli_query($conn,$sql);
@@ -56,16 +49,18 @@ if(isset($_POST['submit'])){
 				} elseif($hasedpwdchecker == true){
 					//login here
 					//create session variable
-					
-					$_SESSION['user_id'] = $row['User_ID'];
+					session_start();
+					$_SESSION["user_id"] = $row['User_ID'];
+					echo ">>>>";
+					echo $row['User_ID'];
 					$hased_pass = password_hash($quser_password,PASSWORD_DEFAULT);
 					
 					$sql_login = "INSERT INTO login (User_ID,User_password) VALUES ('$quser_id','$hased_pass');";
 					
 					$queryresult = $conn->query($sql_login) or trigger_error($conn->error." [$sql_login]");
 					//becarefull of a closed connection (cause of could not fetch mysqli in line....);
-					session_start();
-					header("Location:user_page.php");
+				
+					header("Location:index.html");
 					$conn->close();
 					
 				}

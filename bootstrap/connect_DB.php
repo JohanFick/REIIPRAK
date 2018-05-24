@@ -15,6 +15,17 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully";
 
+//select database query
+		$sql1 = "use reii414_practical_db;";
+	
+		if ($conn->query($sql1) === TRUE) {
+		echo "Database selected succesfully";
+		echo "<br>";
+		} 	else{
+					echo "Error: " . $sql1 . "<br>" . $conn->error;
+					echo "<br>";
+				}
+
 // Johan Check
 //check burger
 

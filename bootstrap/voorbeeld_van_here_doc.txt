@@ -1,0 +1,5 @@
+echo <<<HIPPOTOPAMUS
+<form action="log_off.php" method="post">
+ <button class="btn btn-primary" type="submit" value="Submit">log out</button>
+</form>
+HIPPOTOPAMUS;
