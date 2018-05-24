@@ -1,4 +1,22 @@
-<!DOCTYPE html>
+<?php
+session_start();
+	if(isset($_SESSIO['user_id']))
+	{
+		echo"yes";
+		
+	}
+	else
+	{	header("Location:error.html?login=error56");
+		exit();
+	}
+        
+        
+
+?>
+</head>
+
+
+
 <html>
 
 <head>
@@ -13,24 +31,14 @@
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Boxed.css">
-<?php
-session_start();
 
-
-?>
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md">
-        <div class="container-fluid"><a class="navbar-brand" href="#">Elearning</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="Login.html">log on</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="signup.html">Sign up</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+
+    <form action="log_off.php" method="post"><button class="btn btn-primary" type="submit">Log off</button></form>
+    <div></div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

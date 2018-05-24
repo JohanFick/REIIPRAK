@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
 			
 		
 		if ($result->num_rows < 1 ){ 
-			//header("Location:error.php?login=error");
+			header("Location:error.php?login=error");
 			echo "Username does not exist";
 			exit();
 			
@@ -49,23 +49,27 @@ if(isset($_POST['submit'])){
 				echo "first if";
 				$hasedpwdchecker = password_verify($quser_password,$row['User_password']);
 				if($hasedpwdchecker == false){
-					//header("Location:error.html?login=error");
+					header("Location:error.html?login=error");
 					
 					exit();
 					
 				} elseif($hasedpwdchecker == true){
 					//login here
 					//create session variable
-					echo "go burger";
+					
 					$_SESSION['user_id'] = $row['User_ID'];
 					$hased_pass = password_hash($quser_password,PASSWORD_DEFAULT);
+					
 					$sql_login = "INSERT INTO login (User_ID,User_password) VALUES ('$quser_id','$hased_pass');";
-					echo "yes yes yes";
+					
 					$queryresult = $conn->query($sql_login) or trigger_error($conn->error." [$sql_login]");
 					//becarefull of a closed connection (cause of could not fetch mysqli in line....);
+					session_start();
+					header("Location:user_page.php");
 					$conn->close();
+					
 				}
-				echo "cxcx";
+				
 			}
 			
 			
