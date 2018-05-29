@@ -25,12 +25,8 @@ else {
 
 // check query to see if password and username exists
 	$sql_check_exists = "SELECT User_ID ,User_password from userprofile where userprofile.User_ID = '$quser_id' AND userprofile.User_password = '$quser_password';";
-	$sql_get_name = "SELECT User_FName,User_LName from userprofile,u where u.User_ID = '$quser_id';";
-	
 	
 	$reslultcheck = mysql_query($conn,$sql_check_exists);
-	$User_FLName = mysql_query($conn,$sql_get_name);
-	
 	
 	if(isset($reslultcheck) && $reslultcheck!=null)
 				{
@@ -71,10 +67,11 @@ else {
 				}
 		
 	}
+		
+		
+
 	
-	echo "$User_FLName";
-		
-		
+
 
 $conn->close();
 

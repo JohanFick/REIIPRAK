@@ -4,10 +4,20 @@ session_start();
 
 if(isset($_POST['submit'])){
 	include_once 'connect_DB.php';
+	
+	
 	$quser_id = mysqli_real_escape_string($conn,$_POST['User_ID']);
 	$quser_password = mysqli_real_escape_string($conn,$_POST['User_password']);
 	
 	$hased_pass = password_hash($quser_password,PASSWORD_DEFAULT);
+	//may this user log in
+	if($_SESSION['User'] == $quser_id)
+	{
+		
+		echo "Already login in";
+		header("Location:error.php?login=error");
+		exit();
+	}
 	//Error handlers
 	//check for empty fields
 	if (empty($quser_id) || empty($quser_password)){
@@ -29,9 +39,9 @@ if(isset($_POST['submit'])){
 			
 		
 		if ($result->num_rows < 1 ){ 
-			header("Location:error.php?login=error");
+			header("Location:error.php?login=exists");
 			echo "Username does not exist";
-			exit();
+			
 			
 		} else{
 			$row = $result->fetch_assoc();

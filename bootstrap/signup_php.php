@@ -1,9 +1,9 @@
 <?php
+	session_start();
 if (isset($_POST['submit'])){
-
+	
 	include_once 'connect_DB.php';
 	//set initial user eq to 0
-	$flag = 0;
 	
 	$quser_type = mysqli_real_escape_string($conn,$_POST['Type']);
 	
@@ -15,19 +15,6 @@ if (isset($_POST['submit'])){
 	$quser_streetadress = mysqli_real_escape_string($conn,$_POST['User_StreetAddress']);
 	$quser_password = mysqli_real_escape_string($conn,$_POST['User_password']);
 	
-	
-	//make sure everything is entered
-	
-	if(empty($quser_type))
-	{
-		$flag = 0;
-		echo "Not all records filled in";
-	}
-	else{
-		$flag = 0;
-	}
-	
-
 	//select database query
 	$sql1 = "use reii414_practical_db;";
 	
@@ -72,7 +59,8 @@ if ($result=mysqli_query($conn,"select max(User_ID)  from userprofile;"))
     echo "Error: " . $sql2 . "<br>" . $conn->error;
 	echo "<br>";
 }
-
+//session variable
+$_SESSION['User'] = $quser_id;
 $conn->close();
 
 }
@@ -81,5 +69,7 @@ else {
 }
     header("location:complete.html");//redirect back to main page
 	exit();
+
+
 
 ?>
