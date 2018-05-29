@@ -23,20 +23,21 @@ session_start();
 ?>
 </head>
 
-<body><div> <!--?php session_start();
+<body><div> <?php session_start();
 
-?-->
+?>
 </div>
 
     <div></div>
     <div data-bs-parallax-bg="true" style="height:800px;background-position:center;background-size:contain;background-repeat:no-repeat;">
         <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-            <div class="container"><a class="navbar-brand" href="#">Company Name<div>
-<!--?php
+            <div class="container"><a class="navbar-brand" href="#">E_instructor<div>
+<?php
 echo $_SESSION['user_id'];
-?-->
+?>
 </div></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navcol-1">
+                <div
+                    class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Upload&nbsp;</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="instructorcreate.html">Create</a></li>
@@ -46,9 +47,6 @@ echo $_SESSION['user_id'];
             </div>
     </div>
     </nav><img style="background-image:url(&quot;assets/img/wtN0XKl.jpg&quot;);background-position:center;background-size:contain;width:1366px;height:766px;"></div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-animation.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>
