@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRAKTIES</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Almendra+SC">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
     <link rel="stylesheet" href="assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -21,11 +24,25 @@ session_start();
 </head>
 
 <body>
-    <div class="login-clean">
-        <form action="LOG.php" method="post"><input class="form-control" type="number" name="User_ID"><input class="form-control" type="text" name="User_password"><button class="btn btn-primary active" type="submit" name="submit">Login</button></form>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color:rgba(96,93,93,0);height:50px;">
+            <div class="container"><a class="navbar-brand" href="index.html">Home Page</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto"></ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="login-clean" style="background-image:url(&quot;assets/img/nature_call.jpg&quot;);background-position:center;background-size:cover;background-repeat:no-repeat;height:800px;">
+        <h1 style="margin-right:0px;margin-left:530px;height:100px;width:400px;margin-bottom:0px;font-style:italic;font-family:Aclonica, sans-serif;font-size:28px;margin-top:50px;">Welcome to the future of learning...</h1>
+        <form action="LOG.php" method="post" style="background-color:rgba(105,105,105,0.41);margin-top:10px;margin-right:500px;">
+            <h4 style="color:rgb(27,26,31);">UserID</h4><input class="form-control" type="number" name="User_ID">
+            <h4 style="color:rgb(25,25,34);">UserPassword</h4><input class="form-control" type="text" name="User_password"><button class="btn btn-primary active" type="submit" name="submit" style="height:45px;width:250px;">Login</button></form>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-animation.js"></script>
 </body>
 
 </html>

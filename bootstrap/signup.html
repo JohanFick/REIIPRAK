@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRAKTIES</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Almendra+SC">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
     <link rel="stylesheet" href="assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -21,20 +24,36 @@ session_start();
 </head>
 
 <body style="background-color:rgb(111,61,61);">
-    <div class="d-flex justify-content-center" style="height:650px;">
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="height:50px;">
+            <div class="container"><a class="navbar-brand" href="index.html">Home Page</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto"></ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="d-flex justify-content-center" style="height:650px;background-image:url(&quot;assets/img/awesome-backgrounds-new-awesome-puter-backgrounds-targer-golden-dragon-of-awesome-backgrounds.jpg&quot;);background-position:center;background-size:cover;">
         <form class="form-inline d-inline-flex flex-column justify-content-around align-items-stretch align-content-stretch my-auto" action="signup_php.php" method="post" style="width:389px;height:584px;background-color:rgba(218,200,134,0.45);padding:20px;margin:0px;">
-            <h1 class="text-uppercase text-center">Register</h1>
-            <div class="form-group justify-content-between"><label style="margin:0px;">Type:</label><input class="form-control form-control-lg" type="text" autocomplete="on" name="User_Type" style="width:200px;padding:6px 12px;height:38px;"></div>
-            <div class="form-group justify-content-between"><label>First name:</label><input class="form-control" type="text" name="User_FName"></div>
-            <div class="form-group justify-content-between"><label>Last name:</label><input class="form-control" type="text" name="User_LName"></div>
-            <div class="form-group justify-content-between"><label>Age:</label><input class="form-control" type="number" name="User_Age"></div>
-            <div class="form-group justify-content-between"><label>Sex:</label><input class="form-control" type="text" name="User_sex"></div>
-            <div class="form-group justify-content-between"><label>Tel:</label><input class="form-control" type="number" name="User_Telephone"></div>
-            <div class="form-group justify-content-between"><label>Adress:</label><input class="form-control" type="text" name="User_StreetAddress"></div>
-            <div class="form-group justify-content-between"><label>Password:</label><input class="form-control" type="text" name="User_password"></div><button class="btn btn-primary active" type="submit" style="margin:1px;" name="submit">Submit</button></form>
+            <h1 class="text-uppercase text-center"><button class="btn btn-primary" type="button" data-bs-hover-animate="tada" style="width:50px;height:50px;background-image:url(&quot;assets/img/Toolbar-Regular-Get-Info-icon.png&quot;);background-position:center;background-size:contain;background-repeat:no-repeat;background-color:rgba(0,123,255,0);color:rgba(255,255,255,0);"></button>&nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Register</h1>
+            <div class="form-group justify-content-between"><label style="margin:0px;font-weight:bold;">UserType:</label>
+                <div class="form-check"><input class="form-check-input" type="radio" name="Type" value="A" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Admin</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="Type" value="S" checked="" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Student</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="Type" value="I" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Instructor</label></div>
+            </div>
+            <div class="form-group justify-content-between"><label style="font-weight:bold;">First name:</label><input class="form-control" type="text" name="User_FName"></div>
+            <div class="form-group justify-content-between"><label style="font-weight:bold;">Last name:</label><input class="form-control" type="text" name="User_LName"></div>
+            <div class="form-group justify-content-between"><label style="font-weight:bold;">Age:</label><input class="form-control" type="number" name="User_Age"></div>
+            <div class="form-group justify-content-between" style="font-weight:bold;"><label>Sex:</label><input class="form-control" type="text" name="User_sex"></div>
+            <div class="form-group justify-content-between"><label style="font-weight:bold;">Tel:</label><input class="form-control" type="number" name="User_Telephone"></div>
+            <div class="form-group justify-content-between"><label style="font-weight:bold;">Adress:</label><input class="form-control" type="text" name="User_StreetAddress"></div>
+            <div class="form-group justify-content-between"><label style="font-weight:bold;">Password:</label><input class="form-control" type="text" name="User_password"></div><button class="btn btn-primary active" type="submit" data-bs-hover-animate="flash" style="margin:1px;" name="submit">Submit</button></form>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-animation.js"></script>
 </body>
 
 </html>

@@ -5,7 +5,8 @@ if (isset($_POST['submit'])){
 	//set initial user eq to 0
 	$flag = 0;
 	
-	$quser_type = mysqli_real_escape_string($conn,$_POST['User_Type']);
+	$quser_type = mysqli_real_escape_string($conn,$_POST['Type']);
+	
 	$quser_fname = mysqli_real_escape_string($conn,$_POST['User_FName']);
 	$quser_lname = mysqli_real_escape_string($conn,$_POST['User_LName']);
 	$quser_age= mysqli_real_escape_string($conn,$_POST['User_Age']);

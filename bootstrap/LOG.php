@@ -59,8 +59,22 @@ if(isset($_POST['submit'])){
 					
 					$queryresult = $conn->query($sql_login) or trigger_error($conn->error." [$sql_login]");
 					//becarefull of a closed connection (cause of could not fetch mysqli in line....);
-				
-					header("Location:index.html");
+					if($row['User_Type'] == 'A' )
+					{
+						header("Location:index.html?admin");
+						
+					}
+					else if($row['User_Type'] == 'S')
+					{
+						header("Location:index.html?student");
+						
+					}
+					else if($row['User_Type'] == 'I')
+					{
+						header("Location:index.html?");
+						
+					}
+					header("Location:index.html?");
 					$conn->close();
 					
 				}
