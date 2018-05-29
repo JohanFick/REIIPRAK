@@ -11,13 +11,7 @@ if(isset($_POST['submit'])){
 	
 	$hased_pass = password_hash($quser_password,PASSWORD_DEFAULT);
 	//may this user log in
-	if($_SESSION['User'] == $quser_id)
-	{
-		
-		echo "Already login in";
-		header("Location:error.php?login=error");
-		exit();
-	}
+	
 	//Error handlers
 	//check for empty fields
 	if (empty($quser_id) || empty($quser_password)){
