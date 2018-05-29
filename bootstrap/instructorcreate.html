@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRAKTIES</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Almendra+SC">
+    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
     <link rel="stylesheet" href="assets/css/Footer-Clean.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Boxed.css">
@@ -24,6 +28,31 @@ session_start();
 </head>
 
 <body>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color:#ffffff;">
+            <div class="container"><a class="navbar-brand" href="#">Company Name</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="instructorhome.html">Back</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="login-dark">
+        <form method="post">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-paper"></i>
+                <p style="font-size:10px;">Add the necassary course material here. When done click the create button to create the course .Pleas make sure that the necessary information is added before click the create button thanks . &nbsp;:)</p>
+            </div>
+            <div class="form-group"><label style="color:rgb(41,128,239);">Course Description</label><input class="form-control" type="text"></div>
+            <div class="form-group"><label style="color:rgb(41,128,239);">Course Credits</label><input class="form-control" type="text"></div>
+            <div class="form-group"><label style="color:rgb(41,128,239);">Course Start</label><input class="form-control" type="text"></div>
+            <div class="form-group"><label style="color:rgb(41,128,239);">Course Start</label><input class="form-control" type="text"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Create</button></div>
+        </form>
+    </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>

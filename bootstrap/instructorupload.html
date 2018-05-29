@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRAKTIES</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Almendra+SC">
+    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
     <link rel="stylesheet" href="assets/css/Footer-Clean.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Boxed.css">
@@ -23,7 +27,52 @@ session_start();
 ?>
 </head>
 
-<body><input type="file">
+<body>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+            <div class="container"><a class="navbar-brand" href="#">Company Name</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="instructorhome.html">Back</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="features-boxed">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Upload Portal</h2>
+                <p class="text-center"></p>
+            </div>
+            <div class="row justify-content-center features">
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-file-text icon"></i>
+                        <h3 class="name">Course Material</h3>
+                        <p class="description">Upload the course material. Remeber to specify the courseID</p>
+                        <form><label style="font-family:Aclonica, sans-serif;">CourseID</label><input class="form-control" type="text"><input type="file" style="margin-top:20px;"><button class="btn btn-primary active" type="submit" action="file_inpt.php" method="post">Upload</button></form>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-file icon"></i>
+                        <h3 class="name">Assesment</h3>
+                        <p class="description">Upload the an assesment. Remeber to specify the CourseID</p>
+                        <form><label style="font-family:Aclonica, sans-serif;">CourseID</label><input class="form-control" type="text"><input type="file" style="margin-top:20px;"><button class="btn btn-primary active" type="submit" action="file_inpt.php" method="post">Upload</button></form>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-list-alt icon"></i>
+                        <h3 class="name">Marks</h3>
+                        <p class="description">Upload the course material.Specify CourseID.</p>
+                        <form><label style="font-family:Aclonica, sans-serif;">CourseID</label><input class="form-control" type="text"><input type="file" style="margin-top:20px;"><button class="btn btn-primary active" type="submit" action="file_inpt.php" method="post">Upload</button></form>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item"></div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item"></div>
+            </div>
+        </div>
+    </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>
