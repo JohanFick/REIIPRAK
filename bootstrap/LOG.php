@@ -75,10 +75,10 @@ if(isset($_POST['submit'])){
 					}
 					else if($row['User_Type'] == 'I')
 					{
-						header("Location:index.html?");
+						header("Location:instructorhome.html?");
 						
 					}
-					header("Location:index.html?");
+					
 					$conn->close();
 					
 				}
