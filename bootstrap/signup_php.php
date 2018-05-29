@@ -3,6 +3,7 @@ if (isset($_POST['submit'])){
 
 	include_once 'connect_DB.php';
 	//set initial user eq to 0
+	$flag = 0;
 	
 	$quser_type = mysqli_real_escape_string($conn,$_POST['User_Type']);
 	$quser_fname = mysqli_real_escape_string($conn,$_POST['User_FName']);
@@ -13,6 +14,19 @@ if (isset($_POST['submit'])){
 	$quser_streetadress = mysqli_real_escape_string($conn,$_POST['User_StreetAddress']);
 	$quser_password = mysqli_real_escape_string($conn,$_POST['User_password']);
 	
+	
+	//make sure everything is entered
+	
+	if(empty($quser_type))
+	{
+		$flag = 0;
+		echo "Not all records filled in";
+	}
+	else{
+		$flag = 0;
+	}
+	
+
 	//select database query
 	$sql1 = "use reii414_practical_db;";
 	
@@ -66,7 +80,5 @@ else {
 }
     header("location:complete.html");//redirect back to main page
 	exit();
-
-
 
 ?>
