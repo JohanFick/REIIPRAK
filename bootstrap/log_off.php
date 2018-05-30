@@ -14,4 +14,5 @@ $_SESSION= array();
 
 $result = $conn->query($delete_login) or trigger_error($conn->error." [$delete_login]");
 $conn->close();
+header("Location:index.html?loggedout");
 ?>

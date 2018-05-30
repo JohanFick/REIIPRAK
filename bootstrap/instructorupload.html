@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="game" content="<script src=&quot;//static.miniclipcdn.com/js/game-embed.js&quot;></script>">
     <title>PRAKTIES</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -18,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Social-Icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Boxed.css">
 <?php
@@ -51,21 +53,24 @@ session_start();
                     <div class="box"><i class="fa fa-file-text icon"></i>
                         <h3 class="name">Course Material</h3>
                         <p class="description">Upload the course material. Remeber to specify the courseID</p>
-                        <form><label style="font-family:Aclonica, sans-serif;">CourseID</label><input class="form-control" type="text"><input type="file" style="margin-top:20px;"><button class="btn btn-primary active" type="submit" action="file_inpt.php" method="post">Upload</button></form>
+                        <form action="upload_course.php" method="post" enctype="multipart/form-data"><label style="font-family:Aclonica, sans-serif;">CourseID</label><input class="form-control" type="text"><input type="file" id="fileToUpload" style="margin-top:20px;" name="fileToUpload"><button class="btn btn-primary active" type="submit"
+                                name="submit" value="">Upload</button></form>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-4 item">
                     <div class="box"><i class="fa fa-file icon"></i>
                         <h3 class="name">Assesment</h3>
                         <p class="description">Upload the an assesment. Remeber to specify the CourseID</p>
-                        <form><label style="font-family:Aclonica, sans-serif;">CourseID</label><input class="form-control" type="text"><input type="file" style="margin-top:20px;"><button class="btn btn-primary active" type="submit" action="file_inpt.php" method="post">Upload</button></form>
+                        <form action="upload_assignment.php" method="post" enctype="multipart/form-data"><label style="font-family:Aclonica, sans-serif;">CourseID</label><input class="form-control" type="text"><input type="file" name="fileToUpload" value="fileToUpload" style="margin-top:20px;"><button class="btn btn-primary active"
+                                type="submit" name="submit" value="">Upload</button></form>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-4 item">
                     <div class="box"><i class="fa fa-list-alt icon"></i>
                         <h3 class="name">Marks</h3>
                         <p class="description">Upload the course material.Specify CourseID.</p>
-                        <form><label style="font-family:Aclonica, sans-serif;">CourseID</label><input class="form-control" type="text"><input type="file" style="margin-top:20px;"><button class="btn btn-primary active" type="submit" action="file_inpt.php" method="post">Upload</button></form>
+                        <form action="upload_marks.php" method="post" enctype="multipart/form-data"><label style="font-family:Aclonica, sans-serif;">CourseID</label><input class="form-control" type="text"><input type="file" id="fileToUpload" style="margin-top:20px;" name="fileToUpload"><button class="btn btn-primary active" type="submit"
+                                name="submit" value="">Upload</button></form>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-4 item"></div>

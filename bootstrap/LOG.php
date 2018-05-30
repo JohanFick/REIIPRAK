@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
 				} elseif($hasedpwdchecker == true){
 					//login here
 					//create session variable
-					session_start();
+					
 					$_SESSION["user_id"] = $row['User_ID'];
 					echo ">>>>";
 					echo $row['User_ID'];
@@ -70,7 +70,7 @@ if(isset($_POST['submit'])){
 					}
 					else if($row['User_Type'] == 'S')
 					{
-						header("Location:index.html?student");
+						header("Location:studenthome.html?studentloggedon");
 						
 					}
 					else if($row['User_Type'] == 'I')

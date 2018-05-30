@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="game" content="<script src=&quot;//static.miniclipcdn.com/js/game-embed.js&quot;></script>">
     <title>PRAKTIES</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -18,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Social-Icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Boxed.css">
 <?php
@@ -41,16 +43,16 @@ session_start();
         </nav>
     </div>
     <div class="login-dark">
-        <form method="post">
+        <form action="add_course.php" method="post">
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><i class="icon ion-ios-paper"></i>
                 <p style="font-size:10px;">Add the necassary course material here. When done click the create button to create the course .Pleas make sure that the necessary information is added before click the create button thanks . &nbsp;:)</p>
             </div>
-            <div class="form-group"><label style="color:rgb(41,128,239);">Course Description</label><input class="form-control" type="text"></div>
-            <div class="form-group"><label style="color:rgb(41,128,239);">Course Credits</label><input class="form-control" type="text"></div>
-            <div class="form-group"><label style="color:rgb(41,128,239);">Course Start</label><input class="form-control" type="text"></div>
-            <div class="form-group"><label style="color:rgb(41,128,239);">Course Start</label><input class="form-control" type="text"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Create</button></div>
+            <div class="form-group"><label style="color:rgb(41,128,239);">Course Description</label><input class="form-control" type="text" name="c_descript"></div>
+            <div class="form-group"><label style="color:rgb(41,128,239);">Course Credits</label><input class="form-control" type="text" name="c_credit"></div>
+            <div class="form-group"><label style="color:rgb(41,128,239);">Course Start</label><input class="form-control" type="text" name="c_start"></div>
+            <div class="form-group"><label style="color:rgb(41,128,239);">Course End</label><input class="form-control" type="text" name="c_end"></div>
+            <div class="form-group"><button class="btn btn-primary active" type="submit" name="submit">Create</button></div>
         </form>
     </div>
     <script src="assets/js/jquery.min.js"></script>

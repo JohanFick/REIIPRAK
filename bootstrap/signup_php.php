@@ -59,15 +59,38 @@ if ($result=mysqli_query($conn,"select max(User_ID)  from userprofile;"))
     echo "Error: " . $sql2 . "<br>" . $conn->error;
 	echo "<br>";
 }
+
+if($quser_type === 'I')
+{
+	//$sql2 = "DELETE from userprofile;";
+	//Insert form data query
+	$sql3 = "INSERT INTO instructor (Ins_ID,Ins_Start_Date,Ins_Profession,Ins_Status) VALUES ('$quser_id','07/02/2018','Math','a');";
+	
+	
+	if ($conn->query($sql3) === TRUE) {
+    echo "INSTRUCTOR ADDED";
+	echo "<br>";
+	} 
+	else {
+    echo "Error: " . $sql3 . "<br>" . $conn->error;
+	echo "<br>";
+}
+	
+	
+}
 //session variable
 $_SESSION['User'] = $quser_id;
+
 $conn->close();
 
 }
 else {
-	header("location:index.html");//redirect back to main page
+	header("location:index.html?error");//redirect back to main page
 }
-    header("location:complete.html");//redirect back to main page
+	
+    header("location:index.html?reg=succes");//redirect back to main page
+	
+	
 	exit();
 
 
